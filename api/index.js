@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import userRoutes from './routes/user.routes.js';
 
 dotenv.config();
 const app = express();
@@ -22,4 +23,6 @@ mongoose
     })
     .catch((error) => {
         console.log(error);
-    })
+    });
+
+    app.use("/api/user", userRoutes);
