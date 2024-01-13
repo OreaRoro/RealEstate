@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/user.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 dotenv.config();
 const app = express();
@@ -26,3 +27,4 @@ mongoose
     });
 
     app.use("/api/user", userRoutes);
+    app.use("/api/auth", authRoutes);
